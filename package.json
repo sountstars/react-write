@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "webpack-test",
   "version": "1.0.0",
   "description": "写着玩的",
@@ -32,4 +33,24 @@
     "less-loader": "^9.0.0",
     "react": "^17.0.2"
   }
+=======
+  "name": "react-write",
+  "version": "1.0.0",
+  "description": "写着玩的~",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sountstars/react-write.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sountstars/react-write/issues"
+  },
+  "homepage": "https://github.com/sountstars/react-write#readme"
+>>>>>>> 81fe8f7fd7cbfbd1e6c056ad667aeedcb525b6e2
 }
