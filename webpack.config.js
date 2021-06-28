@@ -1,15 +1,18 @@
 // webpack.config.js
 
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
+
+console.log('webpack :1 ', webpack)
 module.exports = {
     mode: 'development', // 开发模式
     entry: ["@babel/polyfill", path.resolve(__dirname, './src/index.js')],    // 入口文件
     devServer: {
-        port: 8989,
+        port: 8080,
         hot: true,
         open: true,
         // openPage: 'index.html', // 指定默认启动浏览器时打开的页面
@@ -46,15 +49,20 @@ module.exports = {
             }
         ]
     },
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
+      },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, './public/index.html')
+            template: path.resolve(__dirname, './public/index.html'),
+            title:'测试'
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: "[name].[hash].css",
             chunkFilename: "[id].css",
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ],
 
 }
